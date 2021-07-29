@@ -119,6 +119,7 @@ Plug 'scrooloose/syntastic'
 "Plug 'xavierd/clang_complete'
 "Plug 'ianva/vim-youdao-translater' "有道翻译
 Plug 'https://github.com/voldikss/vim-translator.git'
+Plug 'fholgado/minibufexpl.vim'
 call plug#end()
 
 "NERDTree 配置
@@ -234,3 +235,8 @@ vmap <silent> <Leader>w <Plug>TranslateWV
 nmap <silent> <Leader>r <Plug>TranslateR
 " 可视模式，<Leader>r 替换光标下的文本为翻译内容
 vmap <silent> <Leader>r <Plug>TranslateRV
+" 显示/隐藏 MiniBufExplorer 窗口
+map <Leader>bl :MBEToggle<cr>
+" buffer 切换快捷键
+map <Leader><Tab> :MBEbn<cr>
+map <Leader><S-Tab> :MBEbp<cr>
