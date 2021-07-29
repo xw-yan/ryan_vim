@@ -83,8 +83,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'https://github.com/mileszs/ack.vim'
 Plug 'https://github.com/dyng/ctrlsf.vim'
 Plug 'https://github.com/vim-scripts/autoload_cscope.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
 "Plug 'ervandew/supertab'
 "Plug 'xavierd/clang_complete'
+"Plug 'ianva/vim-youdao-translater' "有道翻译
+Plug 'https://github.com/voldikss/vim-translator.git'
 call plug#end()
 
 "NERDTree 配置
@@ -99,6 +103,7 @@ set t_Co=256
 
 "powerline
 "let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'unicode'
 
 " 随 vim 自启动
 "let g:indent_guides_enable_on_vim_startup=1
@@ -182,3 +187,20 @@ let g:SuperTabDefaultCompletionType="<c-x><c-o>"  "按下tab后默认补全方�
 let g:SuperTabMappingForward = "<tab>"
 let g:SuperTabMappingBackward= "s-tab"
 
+"有道翻译
+"vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+"nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+"noremap <leader>yd :<C-u>Yde<CR>
+"翻译插件使用：https://www.joyk.com/dig/detail/1556571607176465
+" 普通模式，<Leader>d 翻译光标下的文本，在命令行回显翻译内容
+nmap <silent> <Leader>t <Plug>Translate
+" 可视模式，<Leader>d 翻译光标下的文本，在命令行回显翻译内容
+vmap <silent> <Leader>t <Plug>TranslateV
+" 普通模式，<Leader>w 翻译光标下的文本，在窗口中显示翻译内容
+nmap <silent> <Leader>w <Plug>TranslateW
+" 可视模式，<Leader>w 翻译光标下的文本，在窗口中显示翻译内容
+vmap <silent> <Leader>w <Plug>TranslateWV
+" 普通模式，<Leader>r 替换光标下的文本为翻译内容
+nmap <silent> <Leader>r <Plug>TranslateR
+" 可视模式，<Leader>r 替换光标下的文本为翻译内容
+vmap <silent> <Leader>r <Plug>TranslateRV
